@@ -1,0 +1,22 @@
+ALGORITHM InsertionSort 
+VAR
+    arr : ARRAY_OF INTEGER [20];
+    i,j,k : INTEGER ; 
+BEGIN
+    Read(arr[0]); 
+    FOR i FROM 1 TO arr.length -1  DO
+        IF (arr[i]<arr[i-1]) THEN
+            FOR j FROM 0 TO i-1  DO
+                IF (arr[i]<arr[j]) THEN
+                   FOR k FROM i TO j+1 STEP -1  DO
+                       arr[k]:= arr[k-1]
+                   END_FOR
+                   arr[j]:= arr[i];
+                END_IF
+            END_FOR
+        ELSE
+            Read(arr[i]);
+        END_IF
+    END_FOR
+    
+END
